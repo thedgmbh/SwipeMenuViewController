@@ -1,6 +1,7 @@
 import UIKit
 
 // MARK: - SwipeMenuViewOptions
+
 public struct SwipeMenuViewOptions {
 
     public struct TabView {
@@ -26,6 +27,9 @@ public struct SwipeMenuViewOptions {
 
             /// ItemView font. Defaults to `14 pt as bold SystemFont`.
             public var font: UIFont = UIFont.boldSystemFont(ofSize: 14)
+            
+            /// ItemView selectedFont. Defaults to `15 pt as bold SystemFont`.
+            public var selectedFont: UIFont = UIFont.systemFont(ofSize: 15, weight: .heavy)
 
             /// ItemView clipsToBounds. Defaults to `true`.
             public var clipsToBounds: Bool = true
@@ -232,6 +236,12 @@ open class SwipeMenuView: UIView {
         super.init(frame: frame)
     }
 
+    public override init(frame: CGRect) {
+        self.options = .init()
+        
+        super.init(frame: frame)
+    }
+    
     public required init?(coder aDecoder: NSCoder) {
 
         self.options = .init()
